@@ -21,11 +21,12 @@ Example:
     >>> import ClearMap.IO as io  
     >>> import ClearMap.Settings as settings
     >>> from ClearMap.ImageProcessing.CellDetection import detectCells;
+    >>> import os
     >>> fn = os.path.join(settings.ClearMapPath, 'Test/Data/Synthetic/test_iDISCO_\d{3}.tif');
     >>> parameter = {"filterDoGParameter" : {"size": (5,5,5)}, "findExtendedMaximaParameter" : {"threshold" : 5}};
     >>> img = io.readData(fn);
     >>> img = img.astype('int16'); # converting data to smaller integer types can be more memory efficient!
-    >>> res = detectCells(img, parameter);
+    >>> res = detectCells(img, **parameter);
     >>> print res[0].shape
 
 See Also:
