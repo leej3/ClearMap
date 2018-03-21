@@ -58,7 +58,15 @@ def setup():
     #elif hostname == 'your-host-name':
     #    IlastikPath = 'path-to-ilastik';
     #    ElastixPath = 'path-to-elastix';   
+    elif hostname == 'MH02086639MACLT':
+       IlastikPath = '/usr/local/bin/ilastik-v0.5.12';
+       ElastixPath = '/usr/local/bin/elastix_macosx64_v4.8/bin/elastix';   
     ##
+    elif os.environ.get('CLEARMAP_CONTAINER'):
+       IlastikPath = '/opt/conda/src/ilastik/ilastik-1.3.0-Linux/';
+       ElastixPath = '/usr/bin/elastix';   
+
+
 
     # check existence:
     if not ElastixPath is None:
