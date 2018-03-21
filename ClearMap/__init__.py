@@ -24,5 +24,4 @@ __copyright__ = '2016 Christoph Kirst'
 
 __all__ = ["Settings", "Parameter", "IO", "ImageProcessing", "Analysis"]
 
-import ClearMap.Settings
-import ClearMap.Parameter
+from ClearMap import *
