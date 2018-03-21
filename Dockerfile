@@ -20,6 +20,9 @@ RUN echo 'deb http://ftp.de.debian.org/debian sid main'>>  /etc/apt/sources.list
                     libtool \
                     pkg-config \
                     elastix \
+                    libsm6 \
+                    libxext6 \
+                    libxrender1 \
                     vim
     # curl -sSL http://neuro.debian.net/lists/xenial.us-ca.full >> /etc/apt/sources.list.d/neurodebian.sources.list && \
     # apt-key add /root/.neurodebian.gpg && \
@@ -88,6 +91,7 @@ RUN conda install -c conda-forge -y openblas=0.2.14; \
     natsort \
     tifffile \
     ipython \
+    libgfortran==1 \
     ; \
     sync \
     && conda clean -tipsy && sync
@@ -98,6 +102,7 @@ RUN chmod -R a+rX /opt/conda && \
 
 
 # # Installing clearmap
+ENV CLEARMAP_CONTAINER="yes"
 USER root
 WORKDIR /opt/conda/src/clearmap
 COPY . /opt/conda/src/clearmap
