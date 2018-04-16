@@ -22,7 +22,13 @@ __license__ = 'GNU GENERAL PUBLIC LICENSE Version 3'
 
 __copyright__ = '2016 Christoph Kirst'
 
-__all__ = ["Settings", "Parameter", "IO", "ImageProcessing", "Analysis"]
+__all__ = [
+"Alignment",
+"Analysis",
+"ImageProcessing",
+"IO",
+"Parameter",
+"Settings",
+]
 
-import ClearMap.Settings
-import ClearMap.Parameter
+from ClearMap import *
